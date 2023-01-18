@@ -56,11 +56,14 @@ updateScore = (result) => {
 
 printResults = (result, playerScore, computerScore) => {
     if (result == "player") {
-        console.log(`You have won this round! Player score: ${playerScore} Computer score: ${computerScore}`);
+        console.log(`You have won this round! Player score: ${playerScore} 
+                        Computer score: ${computerScore}`);
     } else if (result == "computer") {
-        console.log(`The computer won this round! Player score: ${playerScore} Computer score: ${computerScore}`);
+        console.log(`The computer won this round! Player score: ${playerScore} 
+                        Computer score: ${computerScore}`);
     } else if (result == "draw") {
-        console.log(`It was a tie. Player score: ${playerScore} Computer score: ${computerScore}`);
+        console.log(`It was a tie. Player score: ${playerScore} Computer score:
+         ${computerScore}`);
     }
 }
 game = () => {
