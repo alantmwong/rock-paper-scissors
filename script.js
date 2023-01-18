@@ -1,3 +1,11 @@
+/* 
+
+Rock Paper Scissors game
+Author: Alan Wong
+Date: 18/01/2023
+
+*/
+
 let playerScore = 0;
 let computerScore = 0;
 /* getComputerChoice() returns a string which is a random choice between 
