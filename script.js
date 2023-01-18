@@ -1,5 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+/* getComputerChoice() returns a string which is a random choice between 
+"rock", "paper", "scissors". */
 
 getComputerChoice = () => {
     computerRandomInteger = Math.floor(Math.random() * 3)
@@ -11,6 +13,11 @@ getComputerChoice = () => {
         return "scissors"
     }
 }
+
+/* playRockPaperScissors() is a function that receives two inputs, being the 
+computerSelection and playerSelection. It outputs the winner of the round, or 
+in the event of a tie, it will output "draw". */
+
 
 playRockPaperScissors = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
@@ -40,8 +47,8 @@ playRockPaperScissors = (playerSelection, computerSelection) => {
     }
 }
 
-/* updateScore evaluates who won and determines whether to add a score to their total. If it is a 
-    draw, then no one earns a score. */
+/* updateScore evaluates who won and determines whether to add a score to 
+their total. If it is a draw, then no one earns a score. */
 
 updateScore = (result) => {
     if (result == "player") {
@@ -51,8 +58,8 @@ updateScore = (result) => {
     } 
 }
 
-/* printResults is a function that prints the winner of the round (or states if it were a tie) and 
-    lets the user know the current score.  */ 
+/* printResults is a function that prints the winner of the round (or 
+states if it were a tie) and lets the user know the current score.  */ 
 
 printResults = (result, playerScore, computerScore) => {
     if (result == "player") {
@@ -66,6 +73,9 @@ printResults = (result, playerScore, computerScore) => {
          ${computerScore}`);
     }
 }
+/* game() is a function that will use a for loop to call the playRockPaperScissors()
+function 5 times. The game() function should also keep score and report the 
+winner or loser at the end. */
 game = () => {
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Choose rock, paper, or scissors: ");
@@ -77,24 +87,3 @@ game = () => {
 }
 
 game();
-
-/*
-
-getComputerChoice() returns a string which is a random choice between "rock", "paper", "scissors". 
-
-playRockPaperScissors() is a function that receives two inputs, being the computerSelection and playerSelection.
-
-computerSelection is determined by the random getComputerChoice() function. playerSelection is determined by 
-the user input that is done by prompting the user via prompt(). 
-
-game() is a function that will use a for loop to call the playRockPaperScissors() function 5 times. The game()
-function should also keep score and report the winner or loser at the end. 
-
-    The score should mean that there's variables playerScore and computerScore to track it, and each time either
-    a player or computer wins, it increments their score. 
-
-    To report the winner or loser at the end, we need to determine who won, and then by that, print out a statement
-    that they won that round, and display the score with it. 
-    
-
-*/
