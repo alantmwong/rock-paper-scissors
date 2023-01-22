@@ -8,6 +8,7 @@ Date: 18/01/2023
 
 let playerScore = 0;
 let computerScore = 0;
+
 /* getComputerChoice() returns a string which is a random choice between 
 "rock", "paper", "scissors". */
 
@@ -85,13 +86,15 @@ printResults = (result, playerScore, computerScore) => {
 function 5 times. The game() function should also keep score and report the 
 winner or loser at the end. */
 game = () => {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose rock, paper, or scissors: ");
-        let computerSelection = getComputerChoice();
-        let result = playRockPaperScissors(playerSelection, computerSelection);
-        updateScore(result);
-        printResults(result, playerScore, computerScore);
-    }
+    let playerSelection = prompt("Choose rock, paper, or scissors: ");
+    let computerSelection = getComputerChoice();
+    let result = playRockPaperScissors(playerSelection, computerSelection);
+    updateScore(result);
+    printResults(result, playerScore, computerScore);
 }
 
-game();
+// game();
+const buttons = document.querySelector('.rock');
+rock.addEventListener('click', () => {
+    console.log('Hi');
+})
