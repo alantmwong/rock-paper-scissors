@@ -28,7 +28,7 @@ computerSelection and playerSelection. It outputs the winner of the round, or
 in the event of a tie, it will output "draw". */
 
 
-playRockPaperScissors = (playerSelection, computerSelection) => {
+playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
             return "player"
@@ -88,16 +88,13 @@ winner or loser at the end. */
 game = () => {
     let playerSelection = prompt("Choose rock, paper, or scissors: ");
     let computerSelection = getComputerChoice();
-    let result = playRockPaperScissors(playerSelection, computerSelection);
+    let result = playRound(playerSelection, computerSelection);
     updateScore(result);
     printResults(result, playerScore, computerScore);
 }
 
 // game();
 // allow the person to select using a button rather than type
-const rock = document.getElementById('#rock');
-console.log(rock);
+const rock = document.querySelector('.rock');
 
-rock.addEventListener('click', function (e){
-    console.log(e.target);
-});
+rock.addEventListener('click', playRound('rock',getComputerChoice()));
