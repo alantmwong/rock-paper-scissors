@@ -36,36 +36,51 @@ playerWinCondition = (computerSelection) => {
     }
 }
 
+/* computerWinCondition logs computer winner, score, and updates the score */
+
+computerWinCondition = (computerSelection) => {
+    result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+    computerScore++;
+    score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
+    if (computerScore > 4) {
+        winner.textContent = 'Sorry, you lost to the computer!';
+        playerScore = 0;
+        computerScore = 0;
+    }
+}
+
+
 /* playRockPaperScissors() is a function that receives two inputs, being the 
 computerSelection and playerSelection. It outputs the winner of the round, or 
 in the event of a tie, it will output "draw". */
 
 
 playRound = (playerSelection, computerSelection) => {
+    if (winner) {
+        winner.textContent = '';
+    }
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
             playerWinCondition(computerSelection);
         } else if (computerSelection == "paper") {
-            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
-            computerScore++;
-            score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
+            computerWinCondition(computerSelection);
         } else {
             result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
             score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "rock") {
-            result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            playerWinCondition(computerSelection);
         } else if (computerSelection == "scissors") {
-            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            computerWinCondition(computerSelection);
         } else {
             result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "paper") {
-            result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            playerWinCondition(computerSelection);
         } else if (computerSelection == "rock") {
-            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            computerWinCondition(computerSelection);
         } else {
             result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
