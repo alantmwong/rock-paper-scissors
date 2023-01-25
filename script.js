@@ -31,33 +31,33 @@ in the event of a tie, it will output "draw". */
 playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
-            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "paper") {
-            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
+            result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "rock") {
-            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "scissors") {
-            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
+            result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "paper") {
-            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "rock") {
-            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
+            result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     }
 }
 
 /* updateScore evaluates who won and determines whether to add a score to 
-their total. If it is a draw, then no one earns a score. */
+their total. If it is a draw, then no one earns a score. 
 
 updateScore = (result) => {
     if (result == "player") {
@@ -66,9 +66,9 @@ updateScore = (result) => {
         computerScore++;
     } 
 }
-
+*/
 /* printResults is a function that prints the winner of the round (or 
-states if it were a tie) and lets the user know the current score.  */ 
+states if it were a tie) and lets the user know the current score.  
 
 printResults = (result, playerScore, computerScore) => {
     if (result == "player") {
@@ -82,9 +82,10 @@ printResults = (result, playerScore, computerScore) => {
          ${computerScore}`);
     }
 }
+*/
 /* game() is a function that will use a for loop to call the playRockPaperScissors()
 function 5 times. The game() function should also keep score and report the 
-winner or loser at the end. */
+winner or loser at the end. 
 game = () => {
     let playerSelection = prompt("Choose rock, paper, or scissors: ");
     let computerSelection = getComputerChoice();
@@ -92,7 +93,7 @@ game = () => {
     updateScore(result);
     printResults(result, playerScore, computerScore);
 }
-
+*/
 // game();
 // allow the person to select using a button rather than type
 const rock = document.querySelector('.rock');
