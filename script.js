@@ -1,7 +1,7 @@
 /* 
 
 Rock Paper Scissors game
-Author: Alan Wong
+Author: Alan
 Date: 18/01/2023
 
 */
@@ -23,6 +23,19 @@ getComputerChoice = () => {
     }
 }
 
+/* playerWinCondition logs the winner and score, and updates the score */
+
+playerWinCondition = () => {
+    result.textContent = `The player won, as the computer chose ${computerSelection}`;
+    playerScore++;
+    score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
+    if (playerScore > 4) {
+        winner.textContent = 'Congratulations, you win!';
+        playerScore = 0;
+        computerScore = 0;
+    }
+}
+
 /* playRockPaperScissors() is a function that receives two inputs, being the 
 computerSelection and playerSelection. It outputs the winner of the round, or 
 in the event of a tie, it will output "draw". */
@@ -31,11 +44,14 @@ in the event of a tie, it will output "draw". */
 playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
-            result.textContent = `The player won, as the computer chose ${computerSelection}`;
+            playerWinCondition();
         } else if (computerSelection == "paper") {
             result.textContent = `The computer won, as the computer chose ${computerSelection}`;
+            computerScore++;
+            score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
         } else {
             result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
+            score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "rock") {
@@ -100,6 +116,8 @@ const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
 const result = document.querySelector('.result');
+const score = document.querySelector('.score');
+const winner = document.querySelector('.winner');
 
 rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
 paper.addEventListener('click', () => playRound('paper', getComputerChoice()));
