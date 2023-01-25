@@ -94,7 +94,10 @@ game = () => {
 }
 
 // game();
-const buttons = document.querySelector('.rock');
-rock.addEventListener('click', () => {
-    console.log('Hi');
-})
+// allow the person to select using a button rather than type
+const rock = document.getElementById('#rock');
+console.log(rock);
+
+rock.addEventListener('click', function (e){
+    console.log(e.target);
+});
