@@ -31,27 +31,27 @@ in the event of a tie, it will output "draw". */
 playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
-            console.log("player");
+            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "paper") {
-            console.log("computer");
+            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            console.log("draw");
+            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "rock") {
-            console.log("player");
+            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "scissors") {
-            console.log("computer");
+            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            console.log("draw");
+            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "paper") {
-            console.log("player");
+            return result.textContent = `The player won, as the computer chose ${computerSelection}`;
         } else if (computerSelection == "rock") {
-            console.log("computer");
+            return result.textContent = `The computer won, as the computer chose ${computerSelection}`;
         } else {
-            console.log("draw");
+            return result.textContent = `It is a draw, as the computer chose ${computerSelection}`;
         }
     }
 }
@@ -98,6 +98,7 @@ game = () => {
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
+const result = document.querySelector('.result');
 
 rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
 paper.addEventListener('click', () => playRound('paper', getComputerChoice()));
