@@ -31,27 +31,27 @@ in the event of a tie, it will output "draw". */
 playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
-            return "player"
+            console.log("player");
         } else if (computerSelection == "paper") {
-            return "computer"
+            console.log("computer");
         } else {
-            return "draw"
+            console.log("draw");
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "rock") {
-            return "player"
+            console.log("player");
         } else if (computerSelection == "scissors") {
-            return "computer"
+            console.log("computer");
         } else {
-            return "draw"
+            console.log("draw");
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "paper") {
-            return "player"
+            console.log("player");
         } else if (computerSelection == "rock") {
-            return "computer"
+            console.log("computer");
         } else {
-            return "draw"
+            console.log("draw");
         }
     }
 }
@@ -96,5 +96,10 @@ game = () => {
 // game();
 // allow the person to select using a button rather than type
 const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
-rock.addEventListener('click', playRound('rock',getComputerChoice()));
+rock.addEventListener('click', () => playRound('rock', getComputerChoice()));
+paper.addEventListener('click', () => playRound('paper', getComputerChoice()));
+scissors.addEventListener('click', () => playRound('scissors', getComputerChoice()));
+
