@@ -25,7 +25,7 @@ getComputerChoice = () => {
 
 /* playerWinCondition logs the winner and score, and updates the score */
 
-playerWinCondition = () => {
+playerWinCondition = (computerSelection) => {
     result.textContent = `The player won, as the computer chose ${computerSelection}`;
     playerScore++;
     score.textContent = `The score is: Player ${playerScore}, Computer ${computerScore}`;
@@ -44,7 +44,7 @@ in the event of a tie, it will output "draw". */
 playRound = (playerSelection, computerSelection) => {
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "scissors") {
-            playerWinCondition();
+            playerWinCondition(computerSelection);
         } else if (computerSelection == "paper") {
             result.textContent = `The computer won, as the computer chose ${computerSelection}`;
             computerScore++;
