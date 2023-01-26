@@ -87,45 +87,6 @@ playRound = (playerSelection, computerSelection) => {
     }
 }
 
-/* updateScore evaluates who won and determines whether to add a score to 
-their total. If it is a draw, then no one earns a score. 
-
-updateScore = (result) => {
-    if (result == "player") {
-        playerScore++;
-    } else if (result == "computer"){
-        computerScore++;
-    } 
-}
-*/
-/* printResults is a function that prints the winner of the round (or 
-states if it were a tie) and lets the user know the current score.  
-
-printResults = (result, playerScore, computerScore) => {
-    if (result == "player") {
-        console.log(`You have won this round! Player score: ${playerScore} 
-                        Computer score: ${computerScore}`);
-    } else if (result == "computer") {
-        console.log(`The computer won this round! Player score: ${playerScore} 
-                        Computer score: ${computerScore}`);
-    } else if (result == "draw") {
-        console.log(`It was a tie. Player score: ${playerScore} Computer score:
-         ${computerScore}`);
-    }
-}
-*/
-/* game() is a function that will use a for loop to call the playRockPaperScissors()
-function 5 times. The game() function should also keep score and report the 
-winner or loser at the end. 
-game = () => {
-    let playerSelection = prompt("Choose rock, paper, or scissors: ");
-    let computerSelection = getComputerChoice();
-    let result = playRound(playerSelection, computerSelection);
-    updateScore(result);
-    printResults(result, playerScore, computerScore);
-}
-*/
-// game();
 // allow the person to select using a button rather than type
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
